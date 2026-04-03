@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { Container, Button, Col } from "react-bootstrap"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-const headerImg = "../../../images/roomsHeader.png";
+
 
 function Rooms() {
   const data = useStaticQuery(graphql`
@@ -46,7 +46,7 @@ function Rooms() {
       <div className="content-header">
         <div className="header-overlay"></div>
         <StaticImage
-          src={headerImg}
+          src="../../../images/roomsHeader.png"
           quality={60}
           formats={["auto", "webp", "avif"]}
         />
@@ -56,23 +56,23 @@ function Rooms() {
       </div>
       <div className="rooms-main">
         <div className="rooms-grid">
-        
-            <div className="data-wrapper">
-              <div className="gallery">
-                <div className="image-gallery">
-                  <div className="photos">
+
+          <div className="data-wrapper">
+            <div className="gallery">
+              <div className="image-gallery">
+                <div className="photos">
                   {data.allGraphCmsRooms.edges.map(({ node: blockMap }) => (
                     <div>
                       <div className="main-content">
                         <div className="data-wrapper">
                           <div className="estate-type">
                             <div className="image-field">
-                              
-                                  <img src={blockMap.roomImage.image.url}
-                                        quality={60}
-                                        formats={["auto", "webp", "avif", "png", "jpg"]}
-                                        alt={blockMap.roomImage.imageAltText}
-                                    />
+
+                              <img src={blockMap.roomImage.image.url}
+                                quality={60}
+                                formats={["auto", "webp", "avif", "png", "jpg"]}
+                                alt={blockMap.roomImage.imageAltText}
+                              />
 
                               <div className="overlay">
                                 <div className="content">
@@ -81,13 +81,13 @@ function Rooms() {
                                       <div className="desc">
                                         <div className="desc-main">
                                           <h2>{blockMap.roomTitle}</h2>
-                                       
+
                                         </div>
                                         <div className="secondary-cont">
-                                          <p>
-                                            
-                                            <div className="blurb" dangerouslySetInnerHTML={{ __html:blockMap.description.html}} />
-                                           
+                                          <div>
+
+                                            <div className="blurb" dangerouslySetInnerHTML={{ __html: blockMap.description.html }} />
+
                                             <br />
                                             - {blockMap.adultCount} Adults <br />
                                             - {blockMap.adultCount} Children
@@ -98,11 +98,11 @@ function Rooms() {
                                             <br />
                                             - {blockMap.area} Size
                                             <br />
-                                          </p>
+                                          </div>
                                         </div>
                                         <div className="book-now-block">
-                                        <a href={`${blockMap.cloudbedsLink}`} target="_blank" className="book-button">Book Now </a>
-                                       
+                                          <a href={`${blockMap.cloudbedsLink}`} target="_blank" className="book-button">Book Now </a>
+
                                         </div>
                                       </div>
                                     </div>
@@ -115,18 +115,17 @@ function Rooms() {
                       </div>
                     </div>
                   ))}
-                  </div>
                 </div>
               </div>
             </div>
-         
+          </div>
+
         </div>
       </div>
-      <a class="all-button" href="/rooms">View All Rooms</a>
+      <a className="all-button" href="/rooms">View All Rooms</a>
     </div>
   );
 }
 
 export default Rooms;
 
- 

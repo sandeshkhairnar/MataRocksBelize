@@ -4,6 +4,7 @@ import "./../less/header.scss";
 
 function App() {
     const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
+    const [isOpen, setIsOpen] = useState(false);
     const headerRef = useRef(null);
   
     // handle scroll event
@@ -39,35 +40,35 @@ function App() {
             <div className="contact-block">
 
             <a title="" href="tel:+5012262336">
-            <i class="fa fa-phone" aria-hidden="true"></i>
+            <i className="fa fa-phone" aria-hidden="true"></i>
             <span> TEL: +(501) 226 2336</span>
             </a>
             </div>
 
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button className="navbar-toggler" type="button" onClick={() => setIsOpen(!isOpen)} aria-controls="navbarSupportedContent" aria-expanded={isOpen} aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a title="" class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarSupportedContent">
+                <ul className="navbar-nav mr-auto">
+                <li className="nav-item">
+                    <a title="" className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                 </li>
                 
-                <li class="nav-item">
-                    <a title="" class="nav-link" href="/rooms">Our Rooms</a>
+                <li className="nav-item">
+                    <a title="" className="nav-link" href="/rooms">Our Rooms</a>
                 </li>
-                <li class="nav-item">
-                    <a title="" class="nav-link" href="/coming-soon/">Services</a>
+                <li className="nav-item">
+                    <a title="" className="nav-link" href="/coming-soon/">Services</a>
                 </li>
-                <li class="nav-item">
-                    <a title="" class="nav-link" href="/restaurant-and-bar/">Dine In</a>
+                <li className="nav-item">
+                    <a title="" className="nav-link" href="/restaurant-and-bar/">Dine In</a>
                 </li>
-                <li class="nav-item">
-                    <a title="" class="nav-link" href="/coming-soon/">Activities</a>
+                <li className="nav-item">
+                    <a title="" className="nav-link" href="/coming-soon/">Activities</a>
                 </li>
-                <li class="nav-item">
-                    <a title="" class="nav-link" href="/contact-us/">Contact Us</a>
+                <li className="nav-item">
+                    <a title="" className="nav-link" href="/contact-us/">Contact Us</a>
                 </li>
                 </ul>
             

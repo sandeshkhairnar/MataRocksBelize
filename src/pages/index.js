@@ -20,7 +20,7 @@ import Reviews from "./home/components/reviews"
 const IndexPage = () => (
   <Layout>
     <Seo title="Hotel in San Pedro Belize" />
-    <div class="elfsight-app-cf8436d9-5058-4a55-b19c-0724fcbd921d" data-elfsight-app-lazy></div>
+    <div className="elfsight-app-cf8436d9-5058-4a55-b19c-0724fcbd921d" data-elfsight-app-lazy></div>
     <Hero />
   
     <Welcome />

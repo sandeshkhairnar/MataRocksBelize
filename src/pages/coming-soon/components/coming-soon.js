@@ -1,6 +1,5 @@
 import React from 'react'
 import { StaticImage } from "gatsby-plugin-image"
-const headerImg = "../../../images/comingHeader.png";
 
 function Comingsoon() {
   return (
@@ -8,7 +7,8 @@ function Comingsoon() {
           <div className="content-header">
         <div className="header-overlay"></div>
         <StaticImage
-          src={headerImg}
+          alt="Coming header"
+          src="../../../images/comingHeader.png"
           quality={60}
           formats={["auto", "webp", "avif"]}
         />
@@ -20,8 +20,8 @@ function Comingsoon() {
          <h1>Under Construction</h1>
          <p>We are working hard to bring you something amazing. Stay Tuned!</p>
           <p>Visit our Flagship Hotel while we are back!</p>
-          <a href="https://barefoothotelbelize.com/" target="_blank">
-                         <StaticImage src="../../../images/Barefoot-Logo12-white-bze.png" />
+          <a href="https://barefoothotelbelize.com/" target="_blank" rel="noreferrer">
+                         <StaticImage alt="barefoot logo" src="../../../images/Barefoot-Logo12-white-bze.png" />
           </a>
       </div>
       
