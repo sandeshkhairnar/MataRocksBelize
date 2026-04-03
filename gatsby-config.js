@@ -4,9 +4,11 @@ require("dotenv").config({
   path: `.env.${activeEnv}`,
 })
 
-// Fallback to .env.development for local production builds if .env.production is missing
 if (activeEnv === "production" && !process.env.HYGRAPH_ENDPOINT) {
-  require("dotenv").config({ path: ".env.development" })
+  require("dotenv").config({ path: ".env" })
+  if (!process.env.HYGRAPH_ENDPOINT) {
+    require("dotenv").config({ path: ".env.development" })
+  }
 }
 
 /**
